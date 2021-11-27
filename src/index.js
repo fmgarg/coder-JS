@@ -1,17 +1,12 @@
+//0-Su ejecuto npm start este index.js no se recarga auto.
+//1-Necesitamos React
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//2-Necesitamos a ReactDom
+import ReactDOM  from 'react-dom';
+//3-Necesitamos un componente para mostrar algo como const Componente = React.createComponent ()
+//const App = () => {
+//  return <p>Hola Mundo</p>
+//}
+import App from './Components/App';
+//4-Necesitamos mostrar el componente/ dibujar (llama al componente con sintaxis JSX seudo etiqueta html que se autocierra , en que elem del DOM voy a levantar la aplicacion)
+ReactDOM.render (<App/>, document.getElementById ('root'));

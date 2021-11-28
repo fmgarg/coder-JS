@@ -1,6 +1,6 @@
+
 @charset "UTF-8";
-/*Aplicando SASS*/
-/*Ajustes comunes*/
+
 body {
   margin: 10px;
   padding: auto; }
@@ -14,7 +14,7 @@ body {
 
 .headerTitulo h1 {
   font-family: "Zen Tokyo Zoo", sans-serif;
-  color: whitesmoke;
+  color:#000000;
   font-size: 36px;
   text-align: left;
   border: lime solid 0px;
@@ -22,7 +22,7 @@ body {
 
 .Desktop {
   font-family: sans-serif;
-  color: whitesmoke;
+  color: #000000;
   font-size: 24px;
   text-align: left;
   border: lime solid 0px;
@@ -31,7 +31,7 @@ body {
 
 .Mobile {
   font-family: sans-serif;
-  color: whitesmoke;
+  color: #000000;
   font-size: 24px;
   text-align: left;
   border: lime solid 0px;
@@ -49,60 +49,6 @@ body {
   color: #f85d03; }
 
 /*desde aquí para cambiar los estilos del navbar de bootstrap*/
-.navbar-light .navbar-brand {
-  color: whitesmoke;
-  font-size: auto; }
-
-.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-  color: whitesmoke;
-  font-size: auto; }
-
-.navbar-light .navbar-nav .nav-link {
-  color: whitesmoke;
-  font-size: auto; }
-
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  color: whitesmoke;
-  font-size: auto; }
-
-.navbar-light .navbar-nav .nav-link.disabled {
-  color: whitesmoke;
-  font-size: auto; }
-
-.navbar-light .navbar-nav .show > .nav-link,
-.navbar-light .navbar-nav .active > .nav-link,
-.navbar-light .navbar-nav .nav-link.show,
-.navbar-light .navbar-nav .nav-link.active {
-  color: whitesmoke;
-  font-size: auto; }
-
-.navbar-light .navbar-toggler {
-  color: whitesmoke;
-  border-color: rgba(0, 0, 0, 0.1);
-  font-size: auto; }
-
-.navbar-light .navbar-text {
-  color: whitesmoke;
-  font-size: auto; }
-
-.navbar-light .navbar-text a {
-  color: whitesmoke;
-  font-size: auto; }
-
-.navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
-  color: whitesmoke;
-  font-size: auto; }
-
-.nav-item {
-  border: solid white 0px;
-  weight: 100%;
-  font-size: 22px; }
-
-.collapse {
-  border: solid whitesmoke 0px; }
-
-.navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 245, 245)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
 
 /*fin de los estilos del navbar/
 
@@ -161,7 +107,7 @@ body {
   margin-top: 13px; }
 
 .footer {
-  color: whitesmoke;
+  color: #000000;
   font-family: sans-serif;
   font-size: 12px;
   text-align: center;

@@ -3,7 +3,6 @@ import CartWidget from './CartWidget'
 
 const Nav = () => {
     return (         
-                
                 <nav className="aboutusHeader__nav navbar navbar-expand-lg navbar-light">
                 <div className="encabezado justify-content-center ">
                     <div className="headerTitulo one">

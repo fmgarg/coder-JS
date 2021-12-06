@@ -7,6 +7,6 @@ import ReactDOM  from 'react-dom';
 //const App = () => {
 //  return <p>Hola Mundo</p>
 //}
-import App from './Components/App';
+import App from './App';
 //4-Necesitamos mostrar el componente/ dibujar (llama al componente con sintaxis JSX seudo etiqueta html que se autocierra , en que elem del DOM voy a levantar la aplicacion)
 ReactDOM.render (<App/>, document.getElementById ('root'));

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import ItemList from "./ItemList";
+import ItemDetail from "./ItemDetail";
 
 import productos from "./productos"; 
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
 
     const [catalogo, setCatalogo] = useState ([])
 
@@ -12,7 +12,7 @@ const ItemListContainer = () => {
 
     useEffect (() =>{
             
-            const promise = new Promise ( (res, rej) => {
+            const getItem = new Promise ( (res, rej) => {
 
                 setTimeout(()=>{
                     if (Math.random () > 0.5) {
@@ -24,22 +24,20 @@ const ItemListContainer = () => {
                 
             })
 
-            promise.then ((resultado) => {
+            getItem.then ((resultado) => {
                 setCatalogo (resultado)
             })
 
-            promise.catch((error)=>{
+            getItem.catch((error)=>{
                 setMensaje("Algo salio mal...")
             })
     },[])
 
-    console.log (catalogo)
-
     return (
     
-    catalogo.length? <ItemList catalogo ={catalogo}/> : <p>"cargando..."</p>
+    <ItemDetail productos={productos}/>
 
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

@@ -9,9 +9,9 @@ const Item = ({producto}) => {
     }
 
     return (
-            <div key={producto.id} className="card">
+            <div className="card">
                 <p className="fw-bolder text-center">{producto.name}</p>
-                <img className="card-img-top" scr={producto.img}/>
+                <img className="card-img-top" scr={producto.img} alt={producto.name}/>
                 <p>ID:{producto.id}</p>
                 <p className="invisible">{producto.initial}</p>
                 <p>Stock: {producto.stock}</p>

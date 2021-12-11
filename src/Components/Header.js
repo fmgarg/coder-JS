@@ -1,13 +1,12 @@
-import Nav from './NavBar'
+import React from 'react';
 
-//despues del return debe haber algo en la misma linea sino poner entre ()
+import Nav from './NavBar';
+
 const Header = () => {
     return <header>
                 
                 <Nav/>
             </header>
 }
-
-//exportamos la variable app para que este disponible fuera de App.js
 
 export default Header;

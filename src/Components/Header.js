@@ -14,8 +14,8 @@ const Header = () => {
                 <Nav/>
                 <div>
                 <Routes>
-                <Route path="/" element={<ItemListContainer/>}/>
-                <Route path="/categoria/:id" element={<ItemListContainer/>}/>
+                    <Route path="/" element={<ItemListContainer/>}/>
+                    <Route path="/categoria/:id" element={<ItemListContainer/>}/>
                 </Routes>
                 </div>
             </header>

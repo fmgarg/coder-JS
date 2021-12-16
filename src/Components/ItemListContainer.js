@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 
 import ItemList from "./ItemList";
 
-import productos from "./productos"; 
-
 const ItemListContainer = () => {
 
     const [catalogo, setCatalogo] = useState ([])

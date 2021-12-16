@@ -1,34 +1,32 @@
 import Header from './Components/Header';
 
-//import Nav from './Components/NavBar';
-
 import ItemListContainer from './Components/ItemListContainer';
 
-import Footer from './Components/Footer';
+import ItemDetailContainer from './Components/ItemDetailContainer';
 
-import  Button  from 'react-bootstrap/Button';
+import Footer from './Components/Footer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "./styles/index.css";
 
-//3-Necesitamos un componente para mostrar algo como const Componente = React.createComponent ()
+import {BrowserRouter} from 'react-router-dom';
+
+import {Routes, Route} from 'react-router-dom';
+
+
 const App = () => {
 
-    const producto = {titulo:"Producto 1"}
-
-    const saludo = "Hola Mundo"
-
     return (
-            <>
+            <BrowserRouter>
             <Header/>
-            <ItemListContainer producto={producto}/>
-            <Button variant="primary">Agregar</Button>
-            <Footer saludo={saludo}/>
-            </>
+            <Routes>
+                <Route path="/" element={<ItemListContainer/>}/>
+                <Route path="/categoria/:id" element={<ItemListContainer/>}/>
+            </Routes>
+            <Footer/>
+            </BrowserRouter>
     )
 }
-
-//exportamos la variable app para que este disponible fuera de App.js
 
 export default App;

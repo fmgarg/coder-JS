@@ -1,13 +1,24 @@
-import Nav from './NavBar'
+import React from 'react';
 
-//despues del return debe haber algo en la misma linea sino poner entre ()
+import Nav from './NavBar';
+
+import ItemListContainer from './ItemListContainer';
+
+import ItemDetailContainer from './ItemDetailContainer';
+
+
+import {Routes, Route} from 'react-router-dom';
+
 const Header = () => {
     return <header>
-                
                 <Nav/>
+                <div>
+                <Routes>
+                <Route path="/" element={<ItemListContainer/>}/>
+                <Route path="/categoria/:id" element={<ItemListContainer/>}/>
+                </Routes>
+                </div>
             </header>
 }
-
-//exportamos la variable app para que este disponible fuera de App.js
 
 export default Header;

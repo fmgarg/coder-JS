@@ -1,30 +1,37 @@
-import {useState} from 'react';
 
-//despues del return debe haber algo en la misma linea sino poner entre ()
-const ItemCount = () => {
+import React, {useState} from 'react';
+
+import  Button  from 'react-bootstrap/Button';
+
+const ItemCount = ({stock, initial, onAdd}) => {
     
-    const [contador , setcontador] = useState (0)
-    let init = 0
-    useState(init)
+    const [contador , setcontador] = useState (initial);
 
     const aumentarContador = () =>{
-        console.log("Aumentar contador")
-        setcontador (contador+1)
+        if (contador < stock){
+        setcontador ( contador + 1 )
+        }
     }
 
     const reduceContador = () =>{
-        console.log("Reduce contador")
+        if (contador > initial) {
         setcontador (contador-1)
+        }
     }
-
-    return  <div>
-            <h1>Test props</h1>
-            <p>El contador va: {contador}</p>
-            <button onClick={aumentarContador}>aumentar</button>
-            <button onClick={reduceContador}>reducir</button>
+    return  (
+            <>
+            <div className='text-center counter'>
+                <span>
+                    <button onClick={reduceContador}>-</button>            
+                </span>
+                <span>{contador}</span>
+                <span>
+                <button onClick={aumentarContador}>+</button>
+                </span>
             </div>
+            <Button variant="primary" disabled={stock<initial} onClick={()=>{onAdd(contador)}}>Agregar</Button>
+            </>
+    )
 }
-
-//exportamos la variable app para que este disponible fuera de App.js
 
 export default ItemCount;

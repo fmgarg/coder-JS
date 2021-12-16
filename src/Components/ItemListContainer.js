@@ -35,13 +35,14 @@ const ItemListContainer = () => {
     if(catalogo.length === 0){
 
         return (
-    
-        <p>"cargando..."</p>
+                <div>
+                <h4>"cargando..."</h4>
+                </div>
     //catalogo.length? <ItemList catalogo ={catalogo}/> : <p>"cargando..."</p>
 
     )}else{
         return(
-            <ItemList catalogo ={catalogo}/>
+                <ItemList catalogo ={catalogo}/>
             
         )
 

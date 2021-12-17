@@ -5,7 +5,7 @@ import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
 
-    const [catalogo, setCatalogo] = useState ([])
+    const [item, setItem] = useState ([])
 
     const {id} = useParams()
 
@@ -16,13 +16,13 @@ const ItemDetailContainer = () => {
                 fetch (`https://fakestoreapi.com/products/${id}`)
                 .then (res => res.json ())
                 .then (json => {
-                    setCatalogo(json)
+                    setItem(json)
                     console.log (json)
                 })
     },[])
 
 
-    if(catalogo.length === 0){
+    if(item.length === 0){
 
         return (
                 <div>
@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
 
     )}else{
         return(
-                <ItemDetail catalogo ={catalogo}/>
+                <ItemDetail item ={item}/>
             
         )
 

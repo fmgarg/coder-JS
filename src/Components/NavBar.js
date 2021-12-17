@@ -2,6 +2,8 @@ import React from 'react';
 
 import CartWidget from './CartWidget'
 
+import { NavLink } from 'react-router-dom';
+
 const Nav = () => {
     return (         
                 <nav className="aboutusHeader__nav navbar navbar-expand-lg navbar-light">
@@ -16,28 +18,21 @@ const Nav = () => {
                 <div className="collapse navbar-collapse" id="navbarScroll">
                         <ul className="navbar-nav navbar-nav-scroll">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Inicio<span className="sr-only"></span></a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Acerca de nosotros<span className="sr-only"></span></a>
+                                <NavLink className="nav-link" to="/">Inicio<span className="sr-only"></span>
+                                </NavLink>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Productos y servicios
-                                </a>
+                                <NavLink className="nav-link dropdown-toggle" to="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                Categorias
+                                </NavLink>
                                     <ul className="dropdown-menu">
-                                            <li><a className="dropdown-item" href="#">Electrodomésticos</a></li>
-                                            <li><a className="dropdown-item" href="#">Bazar</a></li>
-                                            <li><a className="dropdown-item" href="#">Muebles</a></li>
-                                            <li><a className="dropdown-item" href="#">Envíos</a></li>
-                                            <li><a className="dropdown-item" href="#">Servicios</a></li>
+                                            <li><NavLink className="dropdown-item" to="products/category/electronics">electronics
+                                                </NavLink>
+                                            </li>
+                                            <li><NavLink className="dropdown-item" to="products/category/jewelery">jewelery
+                                                </NavLink>
+                                            </li>
                                     </ul>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Contactenos</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#" tabIndex="-1" aria-disabled="true">Proveedores</a>
                             </li>
                         </ul>
                 </div>

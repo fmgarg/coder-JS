@@ -1,4 +1,5 @@
 
+import { NavLink } from 'react-router-dom'
 import Item from './Item'
 
 const ItemList = ({catalogo}) => {
@@ -7,13 +8,11 @@ const ItemList = ({catalogo}) => {
         <div className='container-fluid'>
             <ul className="cards">
                 {catalogo.map ((x) => (
-                    <Item producto = {x}/> 
+                    <Item key={catalogo.id} producto = {x} /> 
                 ))}
             </ul>
         </div>
     )
 }
-
-console.log(ItemList)
 
 export default ItemList

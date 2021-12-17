@@ -18,7 +18,7 @@ const Nav = () => {
                 <div className="collapse navbar-collapse" id="navbarScroll">
                         <ul className="navbar-nav navbar-nav-scroll">
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="#">Inicio<span className="sr-only"></span>
+                                <NavLink className="nav-link" to="/">Inicio<span className="sr-only"></span>
                                 </NavLink>
                             </li>
                             <li className="nav-item dropdown">

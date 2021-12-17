@@ -13,7 +13,7 @@ const Item = ({producto}) => {
     return (
             <div className="card">
                 <p className="fw-bolder text-center">{producto.title}</p>
-                <img className="card-img-top" scr={producto.img} alt={producto.title}/>
+                <img className="card-img-top" src={producto.img} alt={producto.title}/>
                 <p className="invisible">{producto.id}</p>
                 <p className="invisible card-text description">{producto.description}</p>
                 <p className="fw-bolder text-center">${producto.price}</p>

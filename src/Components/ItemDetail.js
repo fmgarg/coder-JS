@@ -12,7 +12,7 @@ const ItemDetail = (productos) => {
     return (
             <div className="card">
                 <p className="fw-bolder text-center">{productos.name}</p>
-                <img className="card-img-top" scr={productos.img} alt={productos.name}/>
+                <img className="card-img-top" src={productos.img} alt={productos.name}/>
                 <p>ID:{productos.id}</p>
                 <p>Descripcion: {productos.descripcion}</p>
                 <p>Precio: {productos.precio}</p>

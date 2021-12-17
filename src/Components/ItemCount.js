@@ -1,6 +1,8 @@
 
 import React, {useState} from 'react';
 
+import  Button  from 'react-bootstrap/Button';
+
 const ItemCount = ({stock, initial, onAdd}) => {
     
     const [contador , setcontador] = useState (initial);
@@ -27,7 +29,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button onClick={aumentarContador}>+</button>
                 </span>
             </div>
-            <button className="btn btn-outline-dark mt-auto btnAddCart" disabled={stock<initial} onClick={()=>{onAdd(contador)}}>Agregar</button>
+            <Button variant="primary" disabled={stock<initial} onClick={()=>{onAdd(contador)}}>Agregar</Button>
             </>
     )
 }

@@ -19,6 +19,7 @@ const ItemListContainer = () => {
                 .then (res => res.json ())
                 .then (json => {
                     setCatalogo(json)
+                    console.log (json)
                 })
                 .catch(err => console.log(err))
             }else{

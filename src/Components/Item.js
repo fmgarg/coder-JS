@@ -3,11 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Item = ({producto}) => {
 
-    console.log(producto)
-    const onAdd = (contador) =>{
-        console.log (contador)
 
-    }
 
     return (
             <div className="card">

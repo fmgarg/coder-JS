@@ -28,8 +28,6 @@ const ItemDetailContainer = () => {
                 <div>
                 <h4>"cargando..."</h4>
                 </div>
-    //catalogo.length? <ItemList catalogo ={catalogo}/> : <p>"cargando..."</p>
-
     )}else{
         return(
                 <ItemDetail item ={item}/>

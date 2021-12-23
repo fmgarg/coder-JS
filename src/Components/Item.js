@@ -14,7 +14,7 @@ const Item = ({producto}) => {
                 <p className="fw-bolder text-center">${producto.price}</p>
                 <p className="text-center">Stock: {producto.rating.count}</p>
                 <div className="card-footer p-5 pt-5 border-top-0 bg-transparent text-center">
-                <NavLink className="btn btn-outline-dark mt-auto btnAddCart" to={`../../products/${producto.id}`}>Detalle</NavLink>
+                <NavLink className="btn btn-outline-dark mt-auto btnAddCart" to={`products/${producto.id}`}>Detalle</NavLink>
                 </div>
             </div>
     )

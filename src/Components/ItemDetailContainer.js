@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import { useParams } from "react-router-dom";
 
 import ItemDetail from "./ItemDetail";
@@ -9,18 +10,15 @@ const ItemDetailContainer = () => {
 
     const {id} = useParams()
 
-    //const [mensaje, setMensaje] = useState ("cargando...")
-
     useEffect (() =>{
                 
                 fetch (`https://fakestoreapi.com/products/${id}`)
                 .then (res => res.json ())
                 .then (json => {
                     setItem(json)
-                    console.log (json)
+                    //console.log (json)
                 })
     },[])
-
 
     if(item.length === 0){
 
@@ -30,13 +28,9 @@ const ItemDetailContainer = () => {
                 </div>
     )}else{
         return(
-                <ItemDetail item ={item}/>
-            
+                <ItemDetail item ={item}/>    
         )
-
     }
-
-    
 
 }
 

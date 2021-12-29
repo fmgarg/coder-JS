@@ -14,25 +14,18 @@ import "./styles/index.css";
 
 import {Routes, Route, BrowserRouter} from 'react-router-dom';
 
-import { createContext } from 'react';
-
-export const context = createContext ()
-
-const {Provider, Consumer} = context
-
-
 const App = () => {
 
     return (
             <BrowserRouter>
-            <Header/>
-            <Routes>
-                <Route path="/" element={<ItemListContainer/>}/>
-                <Route path="products/category/:id" element={<ItemListContainer/>}/>
-                <Route path="products/:id" element={<ItemDetailContainer/>}/>
-                <Route path="/cart" element={<Cart/>}/>
-            </Routes>
-            <Footer/>
+                <Header/>
+                <Routes>
+                    <Route path="/" element={<ItemListContainer/>}/>
+                    <Route path="products/category/:id" element={<ItemListContainer/>}/>
+                    <Route path="products/:id" element={<ItemDetailContainer/>}/>
+                    <Route path="/cart" element={<Cart/>}/>
+                </Routes>
+                <Footer/>
             </BrowserRouter>
     )
 }

@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
+
 import { useParams } from "react-router-dom";
 
 import ItemList from "./ItemList";
+
+import { db } from "../Firebase";
+
+import { collection, getDocs, query } from "firebase/firestore";
+
+
 
 const ItemListContainer = () => {
 
@@ -11,21 +18,30 @@ const ItemListContainer = () => {
 
     useEffect (() =>{
 
+        const products = collection (db, "products")
+        const promesa = getDocs (products)
+
             if(!id){
                 
-                fetch ('https://fakestoreapi.com/products')
-                .then (res => res.json ())
-                .then (json => {
-                    setCatalogo(json)
-                    //console.log (json)
+                promesa 
+                .then ((resultado)=>{
+                const firebaseProducts = []
+                resultado.forEach (doc =>{
+                firebaseProducts.push (doc.data())
+                })
+                setCatalogo (firebaseProducts)
                 })
                 .catch(err => console.log(err))
             }else{
-                fetch (`https://fakestoreapi.com/products/category/${id}`)
-                .then (res => res.json ())
-                .then (json => {
-                    setCatalogo(json)
+                promesa 
+                .then ((resultado)=>{
+                const firebaseProducts = []
+                resultado.forEach (doc =>{
+                firebaseProducts.push (doc.data())
                 })
+                setCatalogo (firebaseProducts)
+                })
+                .catch(err => console.log(err))
             }
     
     },[id])

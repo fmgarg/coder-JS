@@ -26,10 +26,13 @@ const Nav = () => {
                                 Categorias
                                 </NavLink>
                                     <ul className="dropdown-menu">
-                                            <li><NavLink className="dropdown-item" to="products/category/electronics">electronics
+                                            <li><NavLink className="dropdown-item" to="/category/electronics">electronics
                                                 </NavLink>
                                             </li>
-                                            <li><NavLink className="dropdown-item" to="products/category/jewelery">jewelery
+                                            <li><NavLink className="dropdown-item" to="/category/jewelery">jewelery
+                                                </NavLink>
+                                            </li>
+                                            <li><NavLink className="dropdown-item" to="/category/men's clothing">men's clothing
                                                 </NavLink>
                                             </li>
                                     </ul>

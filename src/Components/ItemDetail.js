@@ -31,9 +31,9 @@ const ItemDetail = ({item}) => {
                 <p className="invisible">{item.id}</p>
                 <p className="card-text description">description:{item.description}</p>
                 <p className="fw-bolder text-center">${item.price}</p>
-                <p className="text-center">Stock: {item.rating.count}</p>
+                <p className="text-center">Stock: {item.count}</p>
                 <div className="card-footer p-5 pt-5 border-top-0 bg-transparent text-center">
-                <ItemCount id={item.id} title={item.title} price={item.price} stock={item.rating.count} initial={1} onAdd={onAdd}/>
+                <ItemCount id={item.id} title={item.title} price={item.price} stock={item.count} initial={1} onAdd={onAdd}/>
                 </div>
             </div>
     )

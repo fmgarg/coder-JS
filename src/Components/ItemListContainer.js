@@ -6,43 +6,54 @@ import ItemList from "./ItemList";
 
 import { db } from "../Firebase";
 
-import { collection, getDocs, query } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
-
-
-const ItemListContainer = () => {
+const ItemListContainer = (prop) => {
 
     const [catalogo, setCatalogo] = useState ([])
 
     const {id} = useParams()
+    console.log(id)
+
+    const traerProductos = async () => {
+        const productosCollection = collection (db, "products")
+        const consulta = await getDocs (productosCollection)
+        
+        const docs_ref = consulta.docs
+
+        const formated = docs_ref.map(documento=>{
+            return {...documento.data(), id: documento.id}
+        })
+        
+        setCatalogo(formated)
+       
+    }
+
+    const traerProductosPorCategoria = async () => {
+
+        const productosCollection = collection (db, "products")
+        const constrain = where ("categoryId", "==", id)
+        const customQuery = query(productosCollection, constrain)
+        const consulta = await getDocs (customQuery)
+        console.log(consulta)
+
+        const docs_ref = consulta.docs
+
+        const formated = docs_ref.map(documento=>{
+            return {...documento.data(), id: documento.id}
+        })
+
+        setCatalogo(formated)
+        
+    }
 
     useEffect (() =>{
 
-        const products = collection (db, "products")
-        const promesa = getDocs (products)
-
-            if(!id){
-                
-                promesa 
-                .then ((resultado)=>{
-                const firebaseProducts = []
-                resultado.forEach (doc =>{
-                firebaseProducts.push (doc.data())
-                })
-                setCatalogo (firebaseProducts)
-                })
-                .catch(err => console.log(err))
-            }else{
-                promesa 
-                .then ((resultado)=>{
-                const firebaseProducts = []
-                resultado.forEach (doc =>{
-                firebaseProducts.push (doc.data())
-                })
-                setCatalogo (firebaseProducts)
-                })
-                .catch(err => console.log(err))
-            }
+       if(id){
+            traerProductosPorCategoria()
+       }else{
+            traerProductos ()
+       }
     
     },[id])
 
@@ -53,7 +64,6 @@ const ItemListContainer = () => {
                 <div>
                 <h4>"cargando..."</h4>
                 </div>
-    //catalogo.length? <ItemList catalogo ={catalogo}/> : <p>"cargando..."</p>
 
     )}else{
         return(

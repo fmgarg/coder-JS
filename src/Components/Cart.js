@@ -1,6 +1,7 @@
 import { db } from "../Firebase"
 import { addDoc, collection } from "firebase/firestore"
-import { useState, memo } from "react"
+//import { useState, memo } from "react"
+import { useState } from "react"
 import { useContext } from "react"
 import { context } from "./CustomProvider"
 import validator from "validator"
@@ -73,7 +74,7 @@ const Cart = () => {
                             <tr key={item.id}>
                                 <th scope="row" className="table__ID">{item.id}</th>
                                 <td> {item.title}</td>
-                                <td> {item.stock}</td>
+                                <td> {item.count}</td>
                                 <td>{item.cantidad}</td>
                                 <td>{item.price}</td>
                                 <td><button className="btn btnDel btn-outline-dark btn-danger" onClick={() => eliminarProducto(item.id)}>X</button></td>
@@ -94,4 +95,5 @@ const Cart = () => {
     )
 }
 
-export default memo (Cart)
+//export default memo (Cart)
+export default Cart

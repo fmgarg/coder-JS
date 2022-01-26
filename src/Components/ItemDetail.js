@@ -1,26 +1,15 @@
 
-import { useState } from "react";
 import ItemCount from "./ItemCount";
+import { useContext } from "react"
+import { context } from "./CustomProvider"
 
 const ItemDetail = ({item}) => {
-
-    //console.log(item)
     
-    const [carrito, setCarrito] = useState ([])
-
-   // console.log (carrito)
+    const { agregarProducto } = useContext(context)
     
-    const onAdd = (contador) =>{
+    const onAdd = (cantidad) =>{
 
-        const addToCart = carrito.slice (0)
-
-        addToCart.push (item, contador)
-
-        setCarrito (addToCart)
-
-        //console.log (contador)
-
-        console.log (carrito)
+    agregarProducto(item, cantidad)
 
     }
 

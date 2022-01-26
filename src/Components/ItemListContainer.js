@@ -13,7 +13,6 @@ const ItemListContainer = (prop) => {
     const [catalogo, setCatalogo] = useState ([])
 
     const {id} = useParams()
-    console.log(id)
 
     const traerProductos = async () => {
         const productosCollection = collection (db, "products")

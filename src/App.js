@@ -14,18 +14,26 @@ import "./styles/index.css";
 
 import {Routes, Route, BrowserRouter} from 'react-router-dom';
 
+import CustomProvider from "./Components/CustomProvider"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const App = () => {
 
     return (
             <BrowserRouter>
-                <Header/>
-                <Routes>
-                    <Route path="/" element={<ItemListContainer/>}/>
-                    <Route path="category/:id" element={<ItemListContainer/>}/>
-                    <Route path="products/:id" element={<ItemDetailContainer/>}/>
-                    <Route path="/cart" element={<Cart/>}/>
-                </Routes>
-                <Footer/>
+                <CustomProvider>
+                            <Header/>
+                            <Routes>
+                                <Route path="/" element={<ItemListContainer/>}/>
+                                <Route path="category/:id" element={<ItemListContainer/>}/>
+                                <Route path="products/:id" element={<ItemDetailContainer/>}/>
+                                <Route path="/cart" element={<Cart/>}/>
+                            </Routes>
+                            <Footer/>
+                            <ToastContainer/>
+                </CustomProvider>
             </BrowserRouter>
     )
 }

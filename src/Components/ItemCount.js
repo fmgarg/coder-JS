@@ -1,36 +1,39 @@
 
 import React, {useState} from 'react';
 
-import { NavLink } from 'react-router-dom';
 
 const ItemCount = ({id, title, price, stock, initial, onAdd}) => {
     
-    const [contador , setcontador] = useState (initial);
+    const [cantidad , setcantidad] = useState (initial);
 
     const aumentarContador = () =>{
-        if (contador < stock){
-        setcontador ( contador + 1 )
+        if (cantidad < stock){
+        setcantidad ( cantidad + 1 )
         }
     }
 
     const reduceContador = () =>{
-        if (contador > initial) {
-        setcontador (contador-1)
-        }
+        if (cantidad > initial) {
+        setcantidad (cantidad - 1)
+        }    
     }
+
+    const confirmar = () => {
+        onAdd(cantidad, id)
+    }
+
     return  (
             <>
             <div className='text-center counter'>
                 <span>
                     <button onClick={reduceContador}>-</button>            
                 </span>
-                <span>{contador}</span>
+                <span>{cantidad}</span>
                 <span>
                 <button onClick={aumentarContador}>+</button>
                 </span>
             </div>
-            <NavLink to="../cart" className="btn btn-outline-dark mt-auto btnAddCart" disabled={stock<initial} onClick={()=>{onAdd(contador)}}>Comprar</NavLink>
-            
+            <button className="btn btn-outline-dark mt-auto btnAddCart" disabled={stock<initial} onClick={confirmar}>Agregar al carrito</button>        
             </>
     )
 }

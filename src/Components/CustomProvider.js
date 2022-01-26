@@ -1,4 +1,4 @@
-import { createContext , useState } from "react"
+import { createContext , useCallback, useState } from "react"
 
 export const context = createContext()
 
@@ -18,7 +18,12 @@ const CustomProvider = ({children}) => {
         setCantidad(cantidad)
     }
 
-    const eliminarProducto = (id) => {}
+    const eliminarProducto = (id) => {
+        setCarrito (carrito.filter ((u) => u.id !== id))
+        console.log(eliminarProductoMemorizado)
+    }
+
+    const eliminarProductoMemorizado = useCallback (eliminarProducto, [])
 
     const vaciarCarrito = () => {
         setCarrito([])

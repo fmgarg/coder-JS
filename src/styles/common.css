@@ -275,6 +275,11 @@ input.btn-black {
   min-height: 270px;
 
 }
+.card-img-det{
+  border: solid greenyellow 0px;
+  width: 300px;
+  justify-content: center;
+}
 
 .card .text {
   padding: 0 20px 20px; }

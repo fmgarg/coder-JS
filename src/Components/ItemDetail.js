@@ -13,9 +13,9 @@ const ItemDetail = ({item}) => {
     }
 
     return (
-            <div className="card">
+            <div className="card container">
                 <p className="fw-bolder text-center">{item.title}</p>
-                <img className="card-img-top" src={item.image} alt={item.title}/>
+                <img className="card-img-det mx-auto" src={item.image} alt={item.title}/>
                 <p className="invisible">{item.id}</p>
                 <p className="card-text description">description:{item.description}</p>
                 <p className="fw-bolder text-center">${item.price}</p>

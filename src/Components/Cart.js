@@ -18,7 +18,7 @@ const Cart = () => {
 
     const guardarCompra = async () => {
 
-        const valida = validator.isAlpha(nombre)
+        const valida = validator.isEmail(email)
 
         if(valida){
                 setLoading(true)
@@ -46,7 +46,7 @@ const Cart = () => {
                 setError("")
                 toast.success("Compra realizada con exito!")
         }else {
-            const msg = "El nombre solo puede contener letras"
+            const msg = "Ingrese una direccion de e-mail valida"
             setError(msg)
             toast.error(msg)
         }
@@ -105,15 +105,12 @@ const Cart = () => {
                         <h4 className="title h1 nav-item">El total de su compra es:$ {itemsInCartPrice} </h4>
                 </div>
                 <div>
-
-
-                        <input type="text" onChange={handleChangeNombre} value={nombre} />
-                        <input type="email" onChange={handleChangeEmail} value={email} />
-                        <input type="telefono" onChange={handleChangeTelefono} value={telefono} />
+                        <input type="text" onChange={handleChangeNombre} value={nombre} placeholder="ingrese su nombre" />
+                        <input type="email" onChange={handleChangeEmail} value={email} placeholder="ingrese su e-mail" />
+                        <input type="telefono" onChange={handleChangeTelefono} value={telefono} placeholder="ingrese su telefono"/>
                         <button id="btnBuy" className="btn btn-outline-dark" onClick={guardarCompra}>Finalizar la compra</button>
                             {loading && <p>Cargando...</p>}
                             {id && <p>Se guardo la compra con id {id}</p>}
-        
                 </div>
             </div>
             </>

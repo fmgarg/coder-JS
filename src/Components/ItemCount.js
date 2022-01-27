@@ -1,6 +1,4 @@
-
 import React, {useState} from 'react';
-
 
 const ItemCount = ({id, count, initial, onAdd}) => {
     

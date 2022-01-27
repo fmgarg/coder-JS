@@ -1,10 +1,6 @@
-
 import { NavLink } from "react-router-dom";
 
 const Item = ({item}) => {
-
-
-
     return (
             <div className="card">
                 <p className="fw-bolder text-center">{item.title}</p>

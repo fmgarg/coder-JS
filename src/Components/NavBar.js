@@ -46,6 +46,4 @@ const Nav = () => {
             )
 }
 
-//exportamos la variable app para que este disponible fuera de App.js
-
 export default Nav;

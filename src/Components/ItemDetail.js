@@ -1,4 +1,3 @@
-
 import ItemCount from "./ItemCount";
 import { useContext } from "react"
 import { context } from "./CustomProvider"

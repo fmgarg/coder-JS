@@ -19,7 +19,7 @@ const CustomProvider = ({children}) => {
         ?
         setCarrito(carrito.map((prod) =>{
             if(prod.id === producto.id){
-                prod.cantidad += cantidad
+                prod.cantidad = cantidad
             }
             return prod
         }))
@@ -37,26 +37,11 @@ const CustomProvider = ({children}) => {
         setCantidad(0)
     }
 
-/*    const totalCarrito = () => {
-
-        let itemsInCart = 0
-    
-        carrito.map((item) => {
-            itemsInCart = itemsInCart + (item.cantidad)*(item.price)
-        })
-    
-        return {itemsInCart}
-    }
-
-
-    console.log (totalCarrito)*/
-    
     const valorContexto = { 
         carrito,
         cantidad,
         agregarProducto,
         eliminarProducto,
-//        totalCarrito,
         vaciarCarrito
      }
 

@@ -1,6 +1,5 @@
 import { db } from "../Firebase"
 import { addDoc, collection } from "firebase/firestore"
-//import { useState, memo } from "react"
 import { useState } from "react"
 import { useContext } from "react"
 import { context } from "./CustomProvider"
@@ -12,6 +11,8 @@ const Cart = () => {
     const [loading, setLoading] = useState(false)
     const [id, setId] = useState("")
     const [nombre, setNombre] = useState("")
+    const [email, setEmail] = useState("")
+    const [telefono, setTelefono] = useState("")
     const { carrito , eliminarProducto , vaciarCarrito } = useContext(context)
     const [error, setError] = useState("")
 
@@ -25,10 +26,10 @@ const Cart = () => {
                                 productos: carrito,
                                 usuario: {
                                     nombre,
-                                    email: "email@email.com",
-                                    telefono: "123456789"
+                                    email,
+                                    telefono,
                                 },
-                                total: 100
+                                total: itemsInCartPrice
                 }
 
                 const ordenesCollection = collection(db, "ordenes")
@@ -40,6 +41,8 @@ const Cart = () => {
                 setId(id)
                 vaciarCarrito()
                 setNombre("")
+                setEmail("")
+                setTelefono("")
                 setError("")
                 toast.success("Compra realizada con exito!")
         }else {
@@ -53,6 +56,14 @@ const Cart = () => {
     const handleChangeNombre = (e) => {
                 const valor = e.target.value
                 setNombre(valor)
+    }
+    const handleChangeEmail = (e) => {
+        const valorE = e.target.value
+        setEmail(valorE)
+    }
+    const handleChangeTelefono = (e) => {
+        const valorT = e.target.value
+        setTelefono(valorT)
     }
 
     let itemsInCartPrice = 0
@@ -91,16 +102,22 @@ const Cart = () => {
                 {error && <p>{error}</p>}
                 <button className="btn btnDel btn-outline-dark btn-danger" onClick={() => vaciarCarrito()}>vaciar Carrito</button>
                 <div id="totalPrice" className="container">
-                        <h4 className="title">El total de su compra es:$ {itemsInCartPrice} </h4>
+                        <h4 className="title h1 nav-item">El total de su compra es:$ {itemsInCartPrice} </h4>
+                </div>
+                <div>
+
+
                         <input type="text" onChange={handleChangeNombre} value={nombre} />
+                        <input type="email" onChange={handleChangeEmail} value={email} />
+                        <input type="telefono" onChange={handleChangeTelefono} value={telefono} />
                         <button id="btnBuy" className="btn btn-outline-dark" onClick={guardarCompra}>Finalizar la compra</button>
                             {loading && <p>Cargando...</p>}
                             {id && <p>Se guardo la compra con id {id}</p>}
+        
                 </div>
             </div>
             </>
     )
 }
 
-//export default memo (Cart)
 export default Cart

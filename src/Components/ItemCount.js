@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 
 
-const ItemCount = ({id, title, price, count, initial, onAdd}) => {
+const ItemCount = ({id, count, initial, onAdd}) => {
     
     const [cantidad , setcantidad] = useState (initial);
 

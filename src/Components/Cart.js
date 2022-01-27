@@ -55,6 +55,12 @@ const Cart = () => {
                 setNombre(valor)
     }
 
+    let itemsInCartPrice = 0
+
+    carrito.map((item) => {
+        itemsInCartPrice = itemsInCartPrice + (item.cantidad)*(item.price)
+    })
+
     return (
             <>
             <div>
@@ -85,10 +91,11 @@ const Cart = () => {
                 {error && <p>{error}</p>}
                 <button className="btn btnDel btn-outline-dark btn-danger" onClick={() => vaciarCarrito()}>vaciar Carrito</button>
                 <div id="totalPrice" className="container">
-                <input type="text" onChange={handleChangeNombre} value={nombre} />
-                <button id="btnBuy" className="btn btn-outline-dark" onClick={guardarCompra}>Finalizar la compra</button>
-                    {loading && <p>Cargando...</p>}
-                    {id && <p>Se guardo la compra con id {id}</p>}
+                        <h4 className="title">El total de su compra es:$ {itemsInCartPrice} </h4>
+                        <input type="text" onChange={handleChangeNombre} value={nombre} />
+                        <button id="btnBuy" className="btn btn-outline-dark" onClick={guardarCompra}>Finalizar la compra</button>
+                            {loading && <p>Cargando...</p>}
+                            {id && <p>Se guardo la compra con id {id}</p>}
                 </div>
             </div>
             </>

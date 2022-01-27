@@ -13,6 +13,7 @@ const CartWidget = () => {
     carrito.map((item) => {
         itemsInCart = itemsInCart + item.cantidad
     })
+    console.log(itemsInCart)
 
     return      <div> 
                     <Link to="/cart"> 

@@ -9,7 +9,7 @@ const CustomProvider = ({children}) => {
 
     const [carrito, setCarrito] = useState([])
     const [cantidad, setCantidad] = useState(0)
-  //  const [InCart, setInCart] = useState(false)
+
     const isInCart = (id) => {
         const found = carrito.find (item => item.id === id);
         return found;  
@@ -25,47 +25,7 @@ const CustomProvider = ({children}) => {
             return prod
         }))
         :
-        setCarrito([...carrito,{...producto,cantidad}])        
-        
-        /*const isInCart =  carrito.find (item => item.id === item.id)
-        setInCart(true)
-
-        if (isInCart){
-            console.log("ya existe")            
-            isInCart.cantidad += cantidad
-            setCarrito ([...carrito])
-            
-        }else{
-            
-            setCarrito([...carrito,{...producto,cantidad}])
-            console.log ("agregado")
-            
-        }*/
-
-        /*
-        if((isInCart(producto.id))||(carrito.length !== 0)){
-
-        console.log("el carrito ya tiene productos")
-        //console.log(carrito)
-        const realTimeCart = carrito.map (
-            item =>{
-                const container = {};
-                container.id=item.id;
-                container.title=item.title;
-                container.count=item.count;
-                container.price=item.price;
-                return container
-            }
-        )
-        console.log(realTimeCart)
-        setCarrito([...realTimeCart,{...producto,cantidad}])
-        
-        }else{
-        setCarrito([...carrito,{...producto,cantidad}])
-        setCantidad(cantidad)
-        console.log ("agregado")
-        }
-       */
+        setCarrito([...carrito,{...producto,cantidad}])            
     //console.log(carrito)
     }
 

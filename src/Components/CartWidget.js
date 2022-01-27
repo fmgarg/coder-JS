@@ -6,12 +6,18 @@ import { context } from "./CustomProvider"
 
 const CartWidget = () => {
 
-    const {cantidad} = useContext(context)
+    const {carrito} = useContext(context)
+
+    let itemsInCart = 0
+
+    carrito.map((item) => {
+        itemsInCart = itemsInCart + item.cantidad
+    })
 
     return      <div> 
                     <Link to="/cart"> 
                         <span className="material-icons">shopping_cart</span>
-                        {cantidad}
+                        {itemsInCart}
                     </Link>
                 </div>
 }

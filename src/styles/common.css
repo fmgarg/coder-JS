@@ -39,7 +39,6 @@ body {
   margin-left: 7%; }
 
 .d-flex {
-  /*ícono del carrito de compras de bootstrap*/
   margin-left: 3%;
   margin-top: 0.5%;
   max-width: 40%;
@@ -47,14 +46,6 @@ body {
 
 .btn-outline-dark {
   color: #f85d03; }
-
-/*desde aquí para cambiar los estilos del navbar de bootstrap*/
-
-/*fin de los estilos del navbar/
-
-
-
-/*inicio carousel del index.html*/
 .w-100 {
   max-width: 50%;
   margin-left: 25%; }
@@ -72,7 +63,6 @@ body {
 .text-muted {
   text-decoration: line-through; }
 
-/*fin carousel del index.html*/
 .btn-whatsapp {
   animation-duration: 2s;
   animation-name: aparecer;
@@ -114,7 +104,6 @@ body {
   display: inline-block;
   bottom: 10px; }
 
-/*desde acá aplica a la sección de ofertas*/
 .ofertasCalientes {
   border: solid gray 0px;
   text-align: center;
@@ -129,7 +118,6 @@ body {
   100% {
     opacity: 1; } }
 
-/*desde acá aplican a form Newsletter*/
 .box {
   margin: auto; }
 
@@ -199,7 +187,6 @@ input.btn-black {
   color: #BDBDBD;
   text-align: center; }
 
-/*Desde acá aplican aboutus.html*/
 .aboutusBody {
   background-color: black;
   color: whitesmoke; }
@@ -211,7 +198,6 @@ input.btn-black {
   text-align: center;
   margin-top: 3%; }
 
-/*Aplicando operaciones SASS*/
 .aboutusSection__mision {
   width: auto; }
   .aboutusSection__mision h2 {
@@ -242,9 +228,7 @@ input.btn-black {
 .cont {
   text-align: center; }
 
-/*fin aplica al aboutus.html*/
-/*inicio aplican al merchandise.html*/
-.merchandiseBody {
+  .merchandiseBody {
   background-color: black;
   color: whitesmoke; }
 
@@ -307,8 +291,6 @@ input.btn-black {
 .btnn {
   height: 130px; }
 
-/*fin aplican al merchandise.html*/
-/*inicio aplican al contact.html*/
 .contactBody {
   background-color: black;
   color: whitesmoke; }
@@ -325,10 +307,7 @@ input.btn-black {
 .FormItem {
   width: 100%; }
 
-/*fin aplican al contact.html*/
-/*inicio aplican al supplier.html*/
 .supplierBody {
   background-color: black;
   color: whitesmoke; }
 
-/*fin aplican al supplier.html*/

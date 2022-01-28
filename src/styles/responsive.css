@@ -1,4 +1,3 @@
-/* hoja de estilos responsive - completado con mobile first solo en index.html*/    
 
 .Desktop {
     display: none;
@@ -36,7 +35,7 @@
             grid-template-columns: repeat(5, 1fr);
             align-content: stretch;
             justify-content: center;
-            }/* responsive del grid de merchandise.html*/
+            }
 
 
      }
@@ -44,13 +43,13 @@
      @media (max-width: 991.98px) {
 
             .imgPulgares {display: none;}
-            /* responsive del grid de aboutus.html*/
+            
             .cards {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             align-content: stretch;
             justify-content: center;
-            }/* responsive del grid de merchandise.html*/
+            }
 
             .btn {
                 margin-top: 10%;
@@ -84,9 +83,6 @@
               }
       }
 
-/* para reparar posición del nav bar de bootstrap y que quede centrado en desktop*/
-
-     
       
       @media (min-width: 992px) {
         .navbar-nav{

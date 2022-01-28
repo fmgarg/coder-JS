@@ -2,7 +2,6 @@ import { initializeApp } from 'firebase/app';
 
 import {getFirestore} from "firebase/firestore"
 
-// TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDlJoe3q62fbf1HsJxAM75l4mBGAetVmvk",
   authDomain: "coderreact-bsas.firebaseapp.com",
